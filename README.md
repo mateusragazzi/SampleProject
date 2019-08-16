@@ -66,8 +66,9 @@ npm install cordova
 > **Important** <br> in order to make build mirror in Cordova build, create a link into "www" folder by doing: 
 
 ```
-rm -r src-cordova/www/
-ln -s ../dist src-cordova/www/
+cd src-cordova/
+rm -rf www
+ln -s ../dist/ www
 ```
 Then you are ready to go!
 
