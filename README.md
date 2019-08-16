@@ -51,42 +51,49 @@ cordova requirements
 
 The output show if there is any missing configurations.
 
----
-
-## How the project was created?
-
-In case you want to know, this project was created by doing:
-
-```
-npm install vue
-npm install @vue/cli
-npm install cordova 
-```
-
-> **Important** <br> in order to make build mirror in Cordova build, create a link into "www" folder by doing: 
-
-```
-cd src-cordova/
-rm -rf www
-ln -s ../dist/ www
-```
-Then you are ready to go!
 
 # Using the sample
 
-## Web
+Use the following command to clone the project:
+
+```
+git clone https://github.com/mateusragazzi/SampleProject.git
+```
+
+Then, run a couple of commands:
+
+```
+cd SampleProject
+npm install
+```
+This will install the project dependencies. After that, you must setup the link between *dist* and Cordova's *www* directory by running:
+
+```
+npm run build
+cd src-cordova
+rm -rf www
+ln -s ../dist/ www
+```
+
+Finally, add Android in your project:
+
+```
+cordova platform add android
+```
+
+## Testing in Web
 
 ### Running in browser
 ```
 npm run serve
 ```
 
-### Build a release for Web Pages
+### Build a release for Web
 ```
 npm run build
 ```
 
-## Android
+## Testing in Android
 
 ### Running in Android
 
@@ -107,3 +114,28 @@ npm run build
 cd src-cordova
 cordova build android --prod
 ```
+##### * this generate an unsigned apk
+---
+
+## How the project was created?
+
+In case you want to know, this project was created by doing:
+
+```
+npm install vue
+npm install @vue/cli
+npm install cordova 
+vue create <name of project>
+cd project_folder
+vue add vuetify
+vue add cordova
+```
+
+> **Important** <br> in order to make build mirror in Cordova build, create a link into "www" folder by doing: 
+
+```
+cd src-cordova/
+rm -rf www
+ln -s ../dist/ www
+```
+Then you are ready to go!

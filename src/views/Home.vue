@@ -1,13 +1,17 @@
 <template>
-  <div class="home">
-    <h1>Welcome to Sample Project</h1>
-    <p>This project was made to save an sample of a project which uses Vue + Vuetify + Cordova to build Android and Web applications. It contains:</p>
-    <v-list>
-      <v-list-item-content v-for="name in tech" :key="name">
-        <v-list-item-title>{{name}}</v-list-item-title>
-      </v-list-item-content>
-    </v-list>
-  </div>
+  <v-layout align-center justify-center column fill-height>
+    <v-flex class="gradient" pa-5 md12 align-center>
+      <v-layout align-center justify-center row fill-height>
+        <v-flex>
+          <h1>Welcome to Sample Project</h1>
+        </v-flex>
+      </v-layout>
+    </v-flex>
+    <v-flex pa-5 md12>
+      <p>This project was made to save an sample of a project which uses Vue + Vuetify + Cordova to build Android and Web applications. It contains:</p>
+      <p v-for="name in tech" :key="name" v-text="name"></p>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -19,7 +23,7 @@ export default {
         "Vuetify - 2.0.0 or +",
         "Vue Router - 3.0.3 or +",
         "Vuex - 3.0.1 or +",
-        "Corodova - 2.3.6 or +",
+        "Cordova - 2.3.6 or +",
         "Babel - 10.0.1 or +",
         "ESlint - 5.0.0 or +"
       ]
@@ -27,4 +31,18 @@ export default {
   }
 };
 </script>
+
+<style>
+.container {
+  width: 100%;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+}
+.gradient {
+  width: 100%;
+  color: white;
+  background: radial-gradient(#000a12, #263238);
+}
+</style>
 
